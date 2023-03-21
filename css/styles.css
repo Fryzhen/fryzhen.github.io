@@ -179,7 +179,6 @@ h5 {
 
 /*Paramètres de la page*/
 main {
-    background-image : url('images/background.jpg');
     display: flex;
     justify-content: center;
     display: block;
