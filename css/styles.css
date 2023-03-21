@@ -124,7 +124,7 @@ nav > ul > li:hover > a {
 /* BODY */
 
 body { /* Toute la page sauf head et footer */
-    background-image : images/sans titre.jpg;
+    background-image : images/background.jpg;
     background-color: #d0d3d6;
     margin: auto;
     height: 100%;
