@@ -1,305 +1,161 @@
-/* CSS */
-
-/* Haut de la page (Menu de sélection "Général") */
 :root {
-    --hauteur-menu: 60px;
+    --blue: #1177d1;
+    --indigo: #6610f2;
+    --purple: #613d7c;
+    --pink: #e83e8c;
+    --red: #d9534f;
+    --orange: #f0ad4e;
+    --yellow: #ff7518;
+    --green: #5cb85c;
+    --teal: #20c997;
+    --cyan: #2980b9;
+    --white: #fff;
+    --gray: #868e96;
+    --gray-dark: #575967;
+    --primary: #2980b9;
+    --secondary: #dee2e6;
+    --success: #5cb85c;
+    --info: #2980b9;
+    --warning: #f0ad4e;
+    --danger: #d9534f;
+    --light: #f8f9fa;
+    --dark: #575967;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: "Open Sans", Arial, sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: Montserrat, sans-serif;
+html, body {
+    height: 100%;
 }
 
-nav {
-    width: 100%;
-    font-size: 18px;
-    position: sticky;
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+#page-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-bootswatch {
+    background-color: #fff;
+}
+
+.navbar-bootswatch {
+    background-color: #ff5660 !important;
+    color: #fff;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+    background-color: #ff5660 !important;
+    color: #fff;
+}
+
+.navbar {
+    max-height: 50px;
+}
+
+.fixed-top {
+    position: fixed;
     top: 0;
-    z-index: 5;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
-nav > ul {
-    display: flex;
-    text-align: center;
-    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
-    height: var(--hauteur-menu);
+.navbar-expand {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
 }
 
-nav ul {
-    list-style-type: none;
-}
-
-nav > ul > li {
-    background-color: #FF5660;
+.navbar {
     position: relative;
-    height: 100%;
-    flex: 1;
-}
-
-nav > ul > li > a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-li a {
-    text-decoration: none;
-    color: black;
-}
-
-.menu-deroulant > a:after {
-    content: '❯';
-    font-size: 15px;
-    margin-left: 7px;
-    display: inline-block;
-}
-
-.sous-menu {
-    margin-top: var(--hauteur-menu);
-    width: 100%;
-    text-align: left;
-    background-color: white;
-    border-radius: 2px;
-    overflow: hidden;
-    max-height: 0;
-
-}
-
-.sous-menu > li > a {
-    height: 50px;
-    padding-left: 20px;
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
 }
 
-nav > ul > li:hover > a {
-    color: #2169EC;
-}
-
-.sous-menu > li:hover {
-    background-color: rgba(33, 105, 236, 0.3);
-}
-
-.sous-menu > li:hover > a {
-    color: white;
-}
-
-@keyframes rotationFleche {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(90deg);
-    }
-}
-
-.menu-deroulant:hover > a:after {
-    animation: rotationFleche 0.2s linear forwards;
-}
-
-@keyframes apparitionSousMenu {
-    0% {
-        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0);
-        border-top: 3px solid #2169EC;
-    }
-    30% {
-        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-        max-height: 50em;
-        border-top: 3px solid #2169EC;
-        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
-    }
-}
-
-.menu-deroulant:hover > .sous-menu {
-    animation: apparitionSousMenu 1s forwards;
-}
-
-/*_____________________*/
-
-/* BODY */
-
-body { /* Toute la page sauf head et footer */
-    background-color: #d0d3d6;
-    margin: auto;
-    height: 100%;
-}
-
-h1 {
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 50px;
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
-    line-height: 120%;
-}
-
-h2 { /* Sous Titre */
-    font-style: italic;
-    font-size: 25px;
-    color: white;
-    margin: 10px auto auto auto;
-    width: 75%;
-    text-align: center;
-    line-height: 120%;
-}
-
-h3 { /* Titres de Paragraphes */
-    font-size: 20px;
-    color: black;
-    margin: 15px 0 15px 0;
-    width: 100%;
-}
-
-h4 {
-    font-size: 17px;
-    color: black;
-    margin: 15px 0 15px 0;
-    width: 100%;
-}
-h5 {
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: black;
-    font-size: 50px;
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
-    line-height: 120%;
-}
-
-
-/*Paramètres de la page*/
-main {
-    display: flex;
-    justify-content: center;
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
 }
 
-.vih_cache {
+#page-wrapper #page {
+    flex: 1 0 auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
-.lien_vers_escape1 {
-    color: red;
-    margin-left: auto;
-    margin-right: auto;
+#page {
+    margin-top: 50px;
 }
 
-.titre_h1_escape {
-    color: #262424;
-}
-
-/* ACCUEIL */
-.logo_sida {
-    margin-top: 2px;
-    margin-left: 10px;
-    width: 3%;
-    position: absolute;
-    z-index: 1
-}
-
-.slider {
-    width: 800px;
-    margin: 30px auto;
-    position: relative;
-}
-
-.slider-viewport {
-    width: 800px;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 1em;
-    border: solid 3px black;
-}
-
-.slider-content {
-    display: grid;
-    grid-auto-flow: column;
-    -webkit-transition: 1s all;
-    transition: 1s all;
-}
-
-.slider-content img {
-    width: 800px;
-    height: 400px;
-}
-
-.slider-nav {
-    position: absolute;
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
     width: 100%;
-    bottom: -30px;
-    margin-top: 10px;
-    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.slider-nav a {
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.3);
-    display: inline-block;
-    background-color: #adafbc;
-    width: 15px;
-    height: 15px;
-    margin: 0 3px;
+body {
+    margin: 0;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: .9375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #575967;
+    text-align: left;
+    background-color: #fdfdfd;
 }
 
-.slider-nav a:hover {
-    background-color: #fff;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.8);
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-#img2:target .slider-content {
-    -webkit-transform: translateX(-800px);
-    transform: translateX(-800px);
+user agent stylesheet h3 {
+    font-size: 1.17em;
+    font-weight: bold;
 }
 
-#img3:target .slider-content {
-    -webkit-transform: translateX(-1600px);
-    transform: translateX(-1600px);
+.coursebox > .info > .coursename a {
+    display: block;
+    background-image: url("https://moodle.umontpellier.fr/theme/image.php/classic/core/1677477947/i/course");
+    background-repeat: no-repeat;
+    padding-left: 21px;
+    background-position: left 0.2em;
 }
 
-#img4:target .slider-content {
-    -webkit-transform: translateX(-2400px);
-    transform: translateX(-2400px);
+.page-header-headings h1 {
+    color: #575967;
+    margin: 0;
 }
 
-#img5:target .slider-content {
-    -webkit-transform: translateX(-3200px);
-    transform: translateX(-3200px);
+h1, .h1 {
+    font-size: 1.78125rem;
 }
 
-.video {
-    padding-top: 15px;
-    justify-content: center;
-    text-align: center;
-}
-
-.copyright {
-    background-color: gray;
-}
-
-#formulaire {
-    background-color: pink;
-    text-align: center;
-    width: 350px;
-    border: solid 3px black;
-    border-radius: 2em;
-    margin: 200px auto 0 auto;
-    padding: 5px 0 5px 0;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-}
-
-#formulaire > div {
-    margin-bottom: 15px;
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+    margin-bottom: .5rem;
+    font-family: "Oswald";
+    font-weight: 300;
+    line-height: 1.2;
 }
 
