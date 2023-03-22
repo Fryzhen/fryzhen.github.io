@@ -137,7 +137,8 @@ user agent stylesheet h3 {
 
 .coursebox > .info > .coursename a {
     display: block;
-    background-image: url("https://moodle.umontpellier.fr/theme/image.php/classic/core/1677477947/i/course");
+    background-image: url("/images/logo_m.png");
+    background-size: 5%;
     background-repeat: no-repeat;
     padding-left: 21px;
     background-position: left 0.2em;
